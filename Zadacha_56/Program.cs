@@ -22,13 +22,13 @@ int rows = Convert.ToInt32(Console.ReadLine()!);
 Console.Write("Введи количество столбцов: \n");
 int columns = Convert.ToInt32(Console.ReadLine()!);
 
-int[,] array = GetArray(rows, columns, 0, 10);
+int[,] MyArray = GetArray(rows, columns, 0, 10);
 Console.WriteLine("Твой массив: ");
 Console.WriteLine();
-PrintArray(array);
+PrintArray(MyArray);
 
 Console.WriteLine();
-Console.WriteLine($" {GetRowNumber(array)}-я строка с наименьшей суммой элементов. (Нумерация начинается с нуля).");
+Console.WriteLine($" {GetRowNumber(MyArray)}-я строка с наименьшей суммой элементов. (Нумерация начинается с нуля).");
 Console.WriteLine();
 
 int[,] GetArray(int m, int n, int min, int max)
@@ -43,32 +43,32 @@ int[,] GetArray(int m, int n, int min, int max)
     }
     return result;
 }
-void PrintArray(int[,] array)
+void PrintArray(int[,] MyArray)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < MyArray.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < MyArray.GetLength(1); j++)
         {
-            Console.Write($"{array[i, j]} ");
+            Console.Write($"{MyArray[i, j]} ");
         }
         Console.WriteLine();
     }
 }
-int GetRowNumber(int[,] array)
+int GetRowNumber(int[,] MyArray)
 {
     int row = 0;
     int minsum = 0;
-    for (int i = 0; i < array.GetLength(1); i++)
+    for (int i = 0; i < MyArray.GetLength(1); i++)
     {
-        minsum = minsum + array[0, i];
+        minsum = minsum + MyArray[0, i];
     }
 
-    for (int i = 1; i < array.GetLength(0); i++)
+    for (int i = 1; i < MyArray.GetLength(0); i++)
     {
         int sum = 0;
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < MyArray.GetLength(1); j++)
         {
-            sum = sum + array[i, j];
+            sum = sum + MyArray[i, j];
         }
         if (minsum > sum)
         {
