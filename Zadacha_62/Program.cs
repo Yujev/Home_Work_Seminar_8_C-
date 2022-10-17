@@ -33,16 +33,16 @@ while (с <= MyArray.GetLength(0) * MyArray.GetLength(1))
 
 WriteArray(MyArray);
 
-void WriteArray(int[,] array)
+void WriteArray(int[,] MyArray)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < MyArray.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < MyArray.GetLength(1); j++)
         {
-            if (array[i, j] / 10 <= 0)
-                Console.Write($" {array[i, j]} ");
+            if (MyArray[i, j] / 10 <= 0)
+                Console.Write($" {MyArray[i, j]} ");
 
-            else Console.Write($"{array[i, j]} ");
+            else Console.Write($"{MyArray[i, j]} ");
         }
         Console.WriteLine();
     }
